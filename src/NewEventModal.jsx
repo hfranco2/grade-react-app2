@@ -13,9 +13,9 @@ export const NewEventModal = ({
   let [vspe, setSpe] = useState(avspe);
   let [vtime, setTime] = useState(avtime);
   let [vstatus, setStatus] = useState(avstatus);
-  let [error, setError] = useState(false);
+  let [error] = useState(false);
   // vstatus = "1";
-  render: return (
+  return (
     <>
       <div id="newEventModal">
         <h2>Evento</h2>

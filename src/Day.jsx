@@ -9,8 +9,8 @@ export const Day = ({ day, onClick, status }) => {
   const id = `div${day.id}`;
   // console.log(status);
 
-  if (status != undefined) {
-    if (status == "2") {
+  if (status !== undefined) {
+    if (status === "2") {
       return (
         <div onClick={onClick} className={className1} id={id}>
           {day.event && <div className="event1">{day.event}</div>}
@@ -19,7 +19,7 @@ export const Day = ({ day, onClick, status }) => {
         </div>
       );
     }
-    if (status == "3") {
+    if (status === "3") {
       return (
         <div onClick={onClick} className={className2} id={id}>
           {day.event && <div className="event2">{day.event}</div>}
@@ -28,7 +28,7 @@ export const Day = ({ day, onClick, status }) => {
         </div>
       );
     }
-    if (status == "4") {
+    if (status === "4") {
       return (
         <div onClick={onClick} className={className3} id={id}>
           {day.event && <div className="event3">{day.event}</div>}
@@ -37,7 +37,7 @@ export const Day = ({ day, onClick, status }) => {
         </div>
       );
     }
-    if (status == "5") {
+    if (status === "5") {
       return (
         <div onClick={onClick} className={className4} id={id}>
           {day.event && <div className="event4">{day.event}</div>}

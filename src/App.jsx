@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Day } from "./Day";
 import { NewEventModal } from "./NewEventModal";
-import { Router } from "react-router";
-import { Route } from "react-router";
-import { Link, useHistory } from "react-router-dom";
+
+import { useHistory } from "react-router-dom";
 import "./App.css";
 
 // import api from "../api/axios";
 import axios from "axios";
 
 export const App = () => {
-  const uri = "http://localhost:4001";
+  const uri = "https://grade-sala-server-dmjlj.ondigitalocean.app";
 
   //Exemplo para chamar a api
   const fetchAgendamentos = async () => {
@@ -20,19 +19,19 @@ export const App = () => {
     return await retorno.data;
   };
 
-  const agendamentoCreate = async (nome, especialidade, horario, status) => {
-    // Send POST request to 'books/create' endpoint
-    await axios
-      .post(`${uri}/agendamento/create`, {
-        nome: nome,
-        especialidade: especialidade,
-        horario: horario,
-        status: 1,
-      })
-      .catch((error) =>
-        console.error(`There was an error creating the ${nome} book: ${error}`)
-      );
-  };
+  // const agendamentoCreate = async (nome, especialidade, horario, status) => {
+  //   // Send POST request to 'books/create' endpoint
+  //   await axios
+  //     .post(`${uri}/agendamento/create`, {
+  //       nome: nome,
+  //       especialidade: especialidade,
+  //       horario: horario,
+  //       status: 1,
+  //     })
+  //     .catch((error) =>
+  //       console.error(`There was an error creating the ${nome} book: ${error}`)
+  //     );
+  // };
 
   const agendamentoUpdate = async (
     id,
@@ -64,9 +63,6 @@ export const App = () => {
         console.error(`There was an error creating the  book: ${error}`)
       );
   };
-  let retorno = [];
-
-  const [testes, setTestes] = useState([]);
 
   const [days, setDays] = useState([]);
   const history = useHistory();
@@ -163,7 +159,8 @@ export const App = () => {
   function isAut() {
     let tk = null;
     tk = JSON.parse(sessionStorage.getItem("token"));
-    if (tk != undefined) {
+    console.log(tk);
+    if (tk !== undefined && tk !== null) {
       return true;
     } else {
       return false;
@@ -364,7 +361,7 @@ export const App = () => {
         </button>
         {/* isAut(true) && */}
       </div>
-      {clicked && (
+      {clicked && isAut(true) && (
         <NewEventModal
           onClose={() => setClicked(null)}
           onSave={(title, vspe, vtime, vstatus) => {

@@ -8,7 +8,7 @@ import axios from "axios";
 function initialState() {
   return { user: "", password: "" };
 }
-const uri = "http://localhost:4001";
+const uri = "https://grade-sala-server-dmjlj.ondigitalocean.app";
 
 const loginApi = async ({ user, password }) => {
   // Send GET request to 'books/all' endpoint
@@ -23,12 +23,12 @@ const loginApi = async ({ user, password }) => {
     });
   return await retorno.data;
 };
-function login({ user, password }) {
-  if (user === "admin" && password === "admin") {
-    return { token: "1234" };
-  }
-  return { error: "Usuário ou senha inválido" };
-}
+// function login({ user, password }) {
+//   if (user === "admin" && password === "admin") {
+//     return { token: "1234" };
+//   }
+//   return { error: "Usuário ou senha inválido" };
+// }
 
 const UserLogin = () => {
   const [values, setValues] = useState(initialState);
