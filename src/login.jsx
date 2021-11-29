@@ -8,6 +8,7 @@ import axios from "axios";
 function initialState() {
   return { user: "", password: "" };
 }
+// const uri = "http://localhost:4001";
 const uri = "https://grade-sala-server-dmjlj.ondigitalocean.app";
 
 const loginApi = async ({ user, password }) => {

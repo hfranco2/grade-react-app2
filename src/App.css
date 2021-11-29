@@ -224,7 +224,7 @@ li {
 .event2,
 .event3,
 .event4 {
-  font-size: 20px;
+  font-size: 18px;
   padding: 3px;
   background-color: #58bae4;
 
@@ -234,15 +234,12 @@ li {
   text-align: center;
 }
 
-.event1 {
-  color: red;
-}
 .spe,
 .spe1,
 .spe2,
 .spe3,
 .spe4 {
-  font-size: 15px;
+  font-size: 14px;
   padding: 3px;
   font-weight: bold;
   text-decoration: underline;
@@ -256,13 +253,18 @@ li {
 .time2,
 .time3,
 .time4 {
-  font-size: 12px;
+  font-size: 10px;
   padding: 3px;
   font-weight: bold;
   border-radius: 5px;
   max-height: 55px;
   overflow: hidden;
   text-align: center;
+}
+.event,
+.time,
+.spe {
+  color: black;
 }
 .event1,
 .time1,
