@@ -21,6 +21,7 @@ const loginApi = async ({ user, password }) => {
     .catch((erro) => {
       console.log("erro da api" + erro);
     });
+  console.log(retorno.data);
   return await retorno.data;
 };
 // function login({ user, password }) {
